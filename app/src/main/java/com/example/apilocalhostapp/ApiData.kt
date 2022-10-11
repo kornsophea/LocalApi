@@ -1,4 +1,4 @@
 package com.example.apilocalhostapp
 
-data class ApiData (var name:String){
+data class ApiData (var id:Int,var name:String){
 }

@@ -17,28 +17,28 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnPost.setOnClickListener {
             val name=binding.edtName.text.toString()
-            postDataToLocalApi(name)
+//            postDataToLocalApi(name)
         }
 
 
     }
-    private fun postDataToLocalApi(name:String){
-        val data=ApiData(name)
-        val apiInterface=ApiClient.create()
-        val call=apiInterface.postDataApi(data)
-        call.enqueue(object :retrofit2.Callback<ApiData>{
-            override fun onResponse(call: Call<ApiData>, response: Response<ApiData>) {
-                if(response.isSuccessful){
-                    Toast.makeText(this@MainActivity,"Post Data Successfully",Toast.LENGTH_LONG).show()
-                }else{
-                    Toast.makeText(this@MainActivity,response.message(),Toast.LENGTH_LONG).show()
-                }
-            }
-
-            override fun onFailure(call: Call<ApiData>, t: Throwable) {
-                Toast.makeText(this@MainActivity,t.message,Toast.LENGTH_LONG).show()
-            }
-
-        })
-    }
+//    private fun postDataToLocalApi(name:String){
+//        val data=ApiData(id,name)
+//        val apiInterface=ApiClient.create()
+//        val call=apiInterface.postDataApi(data)
+//        call.enqueue(object :retrofit2.Callback<ApiData>{
+//            override fun onResponse(call: Call<ApiData>, response: Response<ApiData>) {
+//                if(response.isSuccessful){
+//                    Toast.makeText(this@MainActivity,"Post Data Successfully",Toast.LENGTH_LONG).show()
+//                }else{
+//                    Toast.makeText(this@MainActivity,response.message(),Toast.LENGTH_LONG).show()
+//                }
+//            }
+//
+//            override fun onFailure(call: Call<ApiData>, t: Throwable) {
+//                Toast.makeText(this@MainActivity,t.message,Toast.LENGTH_LONG).show()
+//            }
+//
+//        })
+//    }
 }
